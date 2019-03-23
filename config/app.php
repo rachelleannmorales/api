@@ -7,10 +7,13 @@
  */
 return [
     'name' => env('APP_NAME', 'lumen'),
-    'debug' => env('APP_DEBUG', false),
+    'debug' => env('APP_DEBUG', true),
     'env' => env('APP_ENV', 'production'),
+    'timezone' => env('TZ', 'UTC') ?: 'UTC',
     'release' => env('APP_RELEASE', 'latest'),
     'providers' => [
-        App\Providers\AppServiceProvider::class
+        App\Providers\AppServiceProvider::class,
+        App\Providers\RoutesServiceProvider::class,
+
     ]
 ];
