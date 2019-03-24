@@ -23,6 +23,8 @@ $app->withEloquent();
 
 $app->configure('app');
 
+$app->configure('cors');
+
 // register service providers from app.php
 foreach (\Illuminate\Support\Facades\Config::get('app.providers') as $provider) {
     $app->register($provider);

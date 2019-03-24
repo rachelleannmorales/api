@@ -14,6 +14,6 @@ return [
     'providers' => [
         App\Providers\AppServiceProvider::class,
         App\Providers\RoutesServiceProvider::class,
-
+        \Barryvdh\Cors\ServiceProvider::class
     ]
 ];

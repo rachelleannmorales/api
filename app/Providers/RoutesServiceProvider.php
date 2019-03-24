@@ -10,6 +10,7 @@ namespace App\Providers;
 
 
 use App\Middlewares\Cors;
+use Barryvdh\Cors\HandleCors;
 use Carbon\Laravel\ServiceProvider;
 
 class RoutesServiceProvider extends ServiceProvider
@@ -18,7 +19,7 @@ class RoutesServiceProvider extends ServiceProvider
     {
         $this->app->router->group([
             'namespace' => 'App\Controllers',
-            'middleware' => Cors::class
+            'middleware' => HandleCors::class
         ], function ($router) {
             $router->get('/', function () use ($router) {
                 return $router->app->version();
